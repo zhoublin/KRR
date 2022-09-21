@@ -6,8 +6,8 @@
 import omegaconf
 
 from knowledgedb import RDF
-from service import FOILearner
-from QA import QueryAnswerService
+from algorithm import FOILearner
+from QAservice import QueryAnswerService
 from utils.parser import NLParser
 from utils.gui import QAGui
 
