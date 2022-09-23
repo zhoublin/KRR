@@ -1,0 +1,83 @@
+@prefix nmDrink: <http://xmlns.com/foaf/0.1/Drinks#> .
+@prefix nmHouse: <http://xmlns.com/foaf/0.1/House#> .
+@prefix nmJob: <http://xmlns.com/foaf/0.1/Job#> .
+@prefix nmPerson: <http://xmlns.com/foaf/0.1/Person#> .
+@prefix nmPet: <http://xmlns.com/foaf/0.1/Pet#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+nmDrink:coffee nmDrink:is nmDrink:drink .
+
+nmDrink:milk nmDrink:is nmDrink:drink .
+
+nmDrink:orange_juice nmDrink:is nmDrink:drink .
+
+nmDrink:tea nmDrink:is nmDrink:drink .
+
+nmDrink:water nmDrink:is nmDrink:drink .
+
+nmHouse:blue nmHouse:is nmHouse:house .
+
+nmHouse:green nmHouse:is nmHouse:house .
+
+nmHouse:red nmHouse:is nmHouse:house .
+
+nmHouse:white nmHouse:is nmHouse:house .
+
+nmHouse:yellow nmHouse:is nmHouse:house .
+
+nmJob:diplomat nmJob:is nmJob:job .
+
+nmJob:doctor nmJob:is nmJob:job .
+
+nmJob:painter nmJob:is nmJob:job .
+
+nmJob:photographer nmJob:is nmJob:job .
+
+nmJob:violinist nmJob:is nmJob:job .
+
+nmPerson:british nmPerson:is nmPerson:person .
+
+nmPerson:italian nmPerson:is nmPerson:person .
+
+nmPerson:japanese nmPerson:is nmPerson:person .
+
+nmPerson:norwegian nmPerson:is nmPerson:person .
+
+nmPerson:spaniard nmPerson:is nmPerson:person .
+
+nmPet:dog nmPet:is nmPet:pet .
+
+nmPet:fox nmPet:is nmPet:pet .
+
+nmPet:horse nmPet:is nmPet:pet .
+
+nmPet:snail nmPet:is nmPet:pet .
+
+nmPet:zebra nmPet:is nmPet:pet .
+
+nmDrink:drink a owl:Class ;
+    rdfs:label "The drink type" ;
+    rdfs:comment "The class of all drink type" ;
+    rdfs:subClassOf owl:Thing .
+
+nmHouse:house a owl:Class ;
+    rdfs:label "The House type" ;
+    rdfs:comment "The class of all house" ;
+    rdfs:subClassOf owl:Thing .
+
+nmJob:job a owl:Class ;
+    rdfs:label "The job type" ;
+    rdfs:comment "The class of all job" ;
+    rdfs:subClassOf owl:Thing .
+
+nmPerson:person a owl:Class ;
+    rdfs:label "The person type" ;
+    rdfs:comment "The class of all person" ;
+    rdfs:subClassOf owl:Thing .
+
+nmPet:pet a owl:Class ;
+    rdfs:label "The pet type" ;
+    rdfs:comment "The class of all pet" ;
+    rdfs:subClassOf owl:Thing .
+
