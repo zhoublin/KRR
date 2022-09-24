@@ -18,7 +18,7 @@ class RDF(object):
         pass
 
     @staticmethod
-    def test():
+    def buildKDB():
         import rdflib
         from rdflib import RDF, Namespace, URIRef, Literal
         from rdflib.namespace import OWL, RDF, RDFS
@@ -305,8 +305,8 @@ class RDF(object):
         graph.bind("nmPet", namesPet)
         graph.bind("nmJob", namesJob)
 
-        graph.serialize("foaf.rdf", format="xml")
-        graph.serialize("foaf.ttl", format="turtle")
+        graph.serialize("initDB.rdf", format="xml")
+        graph.serialize("initDB.ttl", format="turtle")
 
         # q = "SELECT ?a ?b WHERE {?a nmPerson:is ?b}"
         q = """
