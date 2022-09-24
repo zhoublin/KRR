@@ -5,7 +5,6 @@
 
 import os
 import rdflib
-import omegaconf
 import re
 import spacy
 import pandas as pd

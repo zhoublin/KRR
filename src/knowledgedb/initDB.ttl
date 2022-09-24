@@ -1,89 +1,51 @@
-@prefix nmDrink: <http://xmlns.com/foaf/0.1/Drinks#> .
-@prefix nmHouse: <http://xmlns.com/foaf/0.1/House#> .
-@prefix nmJob: <http://xmlns.com/foaf/0.1/Job#> .
 @prefix nmPerson: <http://xmlns.com/foaf/0.1/Person#> .
-@prefix nmPet: <http://xmlns.com/foaf/0.1/Pet#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-nmDrink:coffee nmDrink:is nmDrink:drink .
-
-nmDrink:water nmDrink:is nmDrink:drink .
-
-nmHouse:British_House nmHouse:is nmHouse:house .
-
-nmHouse:Italian_House nmHouse:is nmHouse:house .
-
-nmHouse:Japanese_House nmHouse:is nmHouse:house .
-
-nmHouse:Norwegian_House nmHouse:is nmHouse:house .
-
-nmHouse:Spaniard_House nmHouse:is nmHouse:house .
-
-nmHouse:person_in_1stHouse_House nmHouse:is nmHouse:house .
-
-nmHouse:person_in_2ndHouse_House nmHouse:is nmHouse:house .
-
-nmHouse:person_in_4thHouse_House nmHouse:is nmHouse:house .
-
-nmHouse:person_in_5thHouse_House nmHouse:is nmHouse:house .
-
-nmHouse:person_in_middleHouse_House nmHouse:is nmHouse:house .
-
-nmHouse:who_drink_Coffee_House nmHouse:is nmHouse:house .
-
-nmHouse:who_drink_Milk_House nmHouse:is nmHouse:house .
-
-nmHouse:who_drink_Orange_juice_House nmHouse:is nmHouse:house .
-
-nmHouse:who_drink_Tea_House nmHouse:is nmHouse:house .
-
-nmHouse:who_drink_Water_House nmHouse:is nmHouse:house .
-
-nmHouse:who_has_Dog_House nmHouse:is nmHouse:house .
-
-nmHouse:who_has_Fox_House nmHouse:is nmHouse:house ;
-    nmPerson:liveNextto nmHouse:whos_job_Doctor_House .
-
-nmHouse:who_has_Horse_House nmHouse:is nmHouse:house ;
-    nmPerson:liveNextto nmHouse:whos_job_Diplomat_House .
-
-nmHouse:who_has_Snail_House nmHouse:is nmHouse:house .
-
-nmHouse:who_has_Zebra_House nmHouse:is nmHouse:house .
-
-nmHouse:whos_job_Painter_House nmHouse:is nmHouse:house .
-
-nmHouse:whos_job_Photographer_House nmHouse:is nmHouse:house .
-
-nmHouse:whos_job_Violinist_House nmHouse:is nmHouse:house .
-
-nmJob:diplomat nmJob:is nmJob:job ;
-    nmPerson:live_in nmHouse:yellowHouse .
-
-nmJob:doctor nmJob:is nmJob:job .
-
-nmJob:photographer nmJob:is nmJob:job ;
-    nmPerson:pet nmPet:snail .
-
-nmJob:violinist nmJob:is nmJob:job ;
-    nmPerson:like_drink nmDrink:orange_juice .
-
 nmPerson:british nmPerson:is nmPerson:person ;
-    nmPerson:live_in nmHouse:redHouse .
+    nmPerson:live_in nmPerson:redHouse .
+
+nmPerson:british_House nmPerson:is nmPerson:house .
+
+nmPerson:coffee nmPerson:is nmPerson:drink .
+
+nmPerson:diplomat nmPerson:is nmPerson:job ;
+    nmPerson:live_in nmPerson:yellowHouse .
+
+nmPerson:doctor nmPerson:is nmPerson:job .
+
+nmPerson:fox nmPerson:is nmPerson:pet .
+
+nmPerson:horse nmPerson:is nmPerson:pet .
 
 nmPerson:italian nmPerson:is nmPerson:person ;
-    nmPerson:like_drink nmDrink:tea .
+    nmPerson:like_drink nmPerson:tea .
 
-nmPerson:japanese nmPerson:is nmPerson:person ;
-    nmPerson:job nmJob:painter .
+nmPerson:italian_House nmPerson:is nmPerson:house .
+
+nmPerson:japanese nmPerson:has_job nmPerson:painter ;
+    nmPerson:is nmPerson:person .
+
+nmPerson:japanese_House nmPerson:is nmPerson:house .
 
 nmPerson:norwegian nmPerson:is nmPerson:person ;
-    nmPerson:liveNextto nmHouse:blueHouse ;
-    nmPerson:live_in nmHouse:1st .
+    nmPerson:liveNextto nmPerson:blueHouse ;
+    nmPerson:live_in nmPerson:1stHouse .
+
+nmPerson:norwegian_House nmPerson:is nmPerson:house .
+
+nmPerson:person_drink_Coffee_House nmPerson:is nmPerson:house .
+
+nmPerson:person_drink_Milk_House nmPerson:is nmPerson:house .
+
+nmPerson:person_drink_Orange_juice_House nmPerson:is nmPerson:house .
+
+nmPerson:person_drink_Tea_House nmPerson:is nmPerson:house .
+
+nmPerson:person_drink_Water_House nmPerson:is nmPerson:house .
 
 nmPerson:person_drink_coffee nmPerson:is nmPerson:person ;
-    nmPerson:live_in nmHouse:greenHouse .
+    nmPerson:live_in nmPerson:greenHouse .
 
 nmPerson:person_drink_milk nmPerson:is nmPerson:person .
 
@@ -92,6 +54,18 @@ nmPerson:person_drink_orange_juice nmPerson:is nmPerson:person .
 nmPerson:person_drink_tea nmPerson:is nmPerson:person .
 
 nmPerson:person_drink_water nmPerson:is nmPerson:person .
+
+nmPerson:person_has_Dog_House nmPerson:is nmPerson:house .
+
+nmPerson:person_has_Fox_House nmPerson:is nmPerson:house ;
+    nmPerson:next_to nmPerson:person_job_Doctor_House .
+
+nmPerson:person_has_Horse_House nmPerson:is nmPerson:house ;
+    nmPerson:next_to nmPerson:person_job_Diplomat_House .
+
+nmPerson:person_has_Snail_House nmPerson:is nmPerson:house .
+
+nmPerson:person_has_Zebra_House nmPerson:is nmPerson:house .
 
 nmPerson:person_have_dog nmPerson:is nmPerson:person .
 
@@ -103,16 +77,32 @@ nmPerson:person_have_snail nmPerson:is nmPerson:person .
 
 nmPerson:person_have_zebra nmPerson:is nmPerson:person .
 
-nmPerson:person_in_1stHouse nmPerson:is nmPerson:person .
+nmPerson:person_in_1stHouseHouse nmPerson:is nmPerson:person .
 
-nmPerson:person_in_2ndHouse nmPerson:is nmPerson:person .
+nmPerson:person_in_1stHouseHouse_House nmPerson:is nmPerson:house .
 
-nmPerson:person_in_4thHouse nmPerson:is nmPerson:person .
+nmPerson:person_in_2ndHouseHouse nmPerson:is nmPerson:person .
 
-nmPerson:person_in_5thHouse nmPerson:is nmPerson:person .
+nmPerson:person_in_2ndHouseHouse_House nmPerson:is nmPerson:house .
 
-nmPerson:person_in_middleHouse nmPerson:is nmPerson:person ;
-    nmPerson:like_drink nmDrink:milk .
+nmPerson:person_in_4thHouseHouse nmPerson:is nmPerson:person .
+
+nmPerson:person_in_4thHouseHouse_House nmPerson:is nmPerson:house .
+
+nmPerson:person_in_5thHouseHouse nmPerson:is nmPerson:person .
+
+nmPerson:person_in_5thHouseHouse_House nmPerson:is nmPerson:house .
+
+nmPerson:person_in_middleHouseHouse nmPerson:is nmPerson:person ;
+    nmPerson:like_drink nmPerson:milk .
+
+nmPerson:person_in_middleHouseHouse_House nmPerson:is nmPerson:house .
+
+nmPerson:person_job_Painter_House nmPerson:is nmPerson:house .
+
+nmPerson:person_job_Photographer_House nmPerson:is nmPerson:house .
+
+nmPerson:person_job_Violinist_House nmPerson:is nmPerson:house .
 
 nmPerson:person_job_diplomat nmPerson:is nmPerson:person .
 
@@ -124,79 +114,85 @@ nmPerson:person_job_photographer nmPerson:is nmPerson:person .
 
 nmPerson:person_job_violinist nmPerson:is nmPerson:person .
 
-nmPerson:spaniard nmPerson:is nmPerson:person ;
-    nmPerson:pet nmPet:dog .
+nmPerson:photographer nmPerson:has_pet nmPerson:snail ;
+    nmPerson:is nmPerson:job .
 
-nmPet:fox nmPet:is nmPet:pet .
+nmPerson:spaniard nmPerson:has_pet nmPerson:dog ;
+    nmPerson:is nmPerson:person .
 
-nmPet:horse nmPet:is nmPet:pet .
+nmPerson:spaniard_House nmPerson:is nmPerson:house .
 
-nmPet:zebra nmPet:is nmPet:pet .
+nmPerson:violinist nmPerson:is nmPerson:job ;
+    nmPerson:like_drink nmPerson:orange_juice .
 
-nmDrink:milk nmDrink:is nmDrink:drink .
+nmPerson:water nmPerson:is nmPerson:drink .
 
-nmDrink:orange_juice nmDrink:is nmDrink:drink .
+nmPerson:zebra nmPerson:is nmPerson:pet .
 
-nmDrink:tea nmDrink:is nmDrink:drink .
+nmPerson:blueHouse nmPerson:is nmPerson:house .
 
-nmHouse:blueHouse nmHouse:is nmHouse:house .
+nmPerson:dog nmPerson:is nmPerson:pet .
 
-nmHouse:greenHouse nmHouse:is nmHouse:house ;
-    nmHouse:right_side_of nmHouse:whiteHouse .
+nmPerson:greenHouse nmPerson:is nmPerson:house ;
+    nmPerson:right_side_of nmPerson:whiteHouse .
 
-nmHouse:redHouse nmHouse:is nmHouse:house .
+nmPerson:milk nmPerson:is nmPerson:drink .
 
-nmHouse:whiteHouse nmHouse:is nmHouse:house .
+nmPerson:orange_juice nmPerson:is nmPerson:drink .
 
-nmHouse:whos_job_Diplomat_House nmHouse:is nmHouse:house .
+nmPerson:painter nmPerson:is nmPerson:job .
 
-nmHouse:whos_job_Doctor_House nmHouse:is nmHouse:house .
+nmPerson:person_job_Diplomat_House nmPerson:is nmPerson:house .
 
-nmHouse:yellowHouse nmHouse:is nmHouse:house .
+nmPerson:person_job_Doctor_House nmPerson:is nmPerson:house .
 
-nmJob:painter nmJob:is nmJob:job .
+nmPerson:redHouse nmPerson:is nmPerson:house .
 
-nmPet:dog nmPet:is nmPet:pet .
+nmPerson:snail nmPerson:is nmPerson:pet .
 
-nmPet:snail nmPet:is nmPet:pet .
+nmPerson:tea nmPerson:is nmPerson:drink .
 
-nmHouse:5th nmHouse:is nmHouse:house ;
-    nmHouse:next_to nmHouse:4th ;
-    nmHouse:right_side_of nmHouse:4th .
+nmPerson:whiteHouse nmPerson:is nmPerson:house .
 
-nmHouse:1st nmHouse:is nmHouse:house ;
-    nmHouse:left_side_of nmHouse:2nd ;
-    nmHouse:next_to nmHouse:2nd .
+nmPerson:yellowHouse nmPerson:is nmPerson:house .
 
-nmHouse:2nd nmHouse:is nmHouse:house ;
-    nmHouse:left_side_of nmHouse:middle ;
-    nmHouse:next_to nmHouse:1st,
-        nmHouse:middle ;
-    nmHouse:right_side_of nmHouse:1st .
+nmPerson:5thHouse nmPerson:is nmPerson:house ;
+    nmPerson:next_to nmPerson:4thHouse ;
+    nmPerson:right_side_of nmPerson:4thHouse .
 
-nmHouse:4th nmHouse:is nmHouse:house ;
-    nmHouse:left_side_of nmHouse:5th ;
-    nmHouse:next_to nmHouse:5th,
-        nmHouse:middle ;
-    nmHouse:right_side_of nmHouse:middle .
+nmPerson:1stHouse nmPerson:is nmPerson:house ;
+    nmPerson:left_side_of nmPerson:2ndHouse ;
+    nmPerson:next_to nmPerson:2ndHouse .
 
-nmHouse:middle nmHouse:is nmHouse:house ;
-    nmHouse:left_side_of nmHouse:4th ;
-    nmHouse:next_to nmHouse:2nd,
-        nmHouse:4th ;
-    nmHouse:right_side_of nmHouse:2nd .
+nmPerson:2ndHouse nmPerson:is nmPerson:house ;
+    nmPerson:left_side_of nmPerson:middleHouse ;
+    nmPerson:next_to nmPerson:1stHouse,
+        nmPerson:middleHouse ;
+    nmPerson:right_side_of nmPerson:1stHouse .
 
-nmDrink:drink a owl:Class ;
+nmPerson:4thHouse nmPerson:is nmPerson:house ;
+    nmPerson:left_side_of nmPerson:5thHouse ;
+    nmPerson:next_to nmPerson:5thHouse,
+        nmPerson:middleHouse ;
+    nmPerson:right_side_of nmPerson:middleHouse .
+
+nmPerson:middleHouse nmPerson:is nmPerson:house ;
+    nmPerson:left_side_of nmPerson:4thHouse ;
+    nmPerson:next_to nmPerson:2ndHouse,
+        nmPerson:4thHouse ;
+    nmPerson:right_side_of nmPerson:2ndHouse .
+
+nmPerson:drink a owl:Class ;
     rdfs:label "The drink type" ;
     rdfs:comment "The class of all drink type" ;
     rdfs:subClassOf owl:Thing .
 
-nmJob:job a owl:Class ;
+nmPerson:job a owl:Class ;
     rdfs:label "The job type" ;
     rdfs:comment "The class of all job" ;
     rdfs:subClassOf owl:Thing .
 
-nmPet:pet a owl:Class ;
+nmPerson:pet a owl:Class ;
     rdfs:label "The pet type" ;
     rdfs:comment "The class of all pet" ;
     rdfs:subClassOf owl:Thing .
@@ -206,7 +202,7 @@ nmPerson:person a owl:Class ;
     rdfs:comment "The class of all person" ;
     rdfs:subClassOf owl:Thing .
 
-nmHouse:house a owl:Class ;
+nmPerson:house a owl:Class ;
     rdfs:label "The House type" ;
     rdfs:comment "The class of all house" ;
     rdfs:subClassOf owl:Thing .

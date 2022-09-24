@@ -1,1 +1,1 @@
-from FOIL import FOILearner
+from .FOIL import FOILearner

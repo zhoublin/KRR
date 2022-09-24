@@ -1,1 +1,1 @@
-from rdf import RDF
+from .rdf import RDF
