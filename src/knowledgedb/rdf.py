@@ -39,13 +39,76 @@ class RDF(object):
         Italian = URIRef(namesPerson["italian"])
         Norwegian = URIRef(namesPerson["norwegian"])
 
-        House = URIRef(namesHouse["house"])
-        Red = URIRef(namesHouse["red"])
-        green = URIRef(namesHouse["green"])
-        white = URIRef(namesHouse["white"])
-        yellow = URIRef(namesHouse["yellow"])
-        blue = URIRef(namesHouse["blue"])
+        liveNextto = URIRef(namesPerson["liveNextto"])
 
+        person_in_1stHouse = URIRef(namesPerson["person_in_1stHouse"])
+        person_in_2ndHouse = URIRef(namesPerson["person_in_2ndHouse"])
+        person_in_middleHouse = URIRef(namesPerson["person_in_middleHouse"])
+        person_in_4thHouse = URIRef(namesPerson["person_in_4thHouse"])
+        person_in_5thHouse = URIRef(namesPerson["person_in_5thHouse"])
+
+        who_drink_Milk = URIRef(namesPerson["person_drink_milk"])
+        who_drink_Tea = URIRef(namesPerson["person_drink_tea"])
+        who_drink_Orange_juice = URIRef(namesPerson["person_drink_orange_juice"])
+        who_drink_Coffee = URIRef(namesPerson["person_drink_coffee"])
+        who_drink_Water = URIRef(namesPerson["person_drink_water"])
+
+        who_has_Dog = URIRef(namesPerson["person_have_dog"])
+        who_has_Horse = URIRef(namesPerson["person_have_horse"])
+        who_has_Snail = URIRef(namesPerson["person_have_snail"])
+        who_has_Fox = URIRef(namesPerson["person_have_fox"])
+        who_has_Zebra = URIRef(namesPerson["person_have_zebra"])
+
+        whos_job_Photographer = URIRef(namesPerson["person_job_photographer"])
+        whos_job_Diplomat = URIRef(namesPerson["person_job_diplomat"])
+        whos_job_Violinist = URIRef(namesPerson["person_job_violinist"])
+        whos_job_Doctor = URIRef(namesPerson["person_job_doctor"])
+        whos_job_Painter = URIRef(namesPerson["person_job_painter"])
+### ===========================================
+        House = URIRef(namesHouse["house"])
+        Location = URIRef(namesHouse["location"])
+        RightsideOf = URIRef(namesHouse["right_side_of"])
+        LeftsideOf = URIRef(namesHouse["left_side_of"])
+        Nextto = URIRef(namesHouse["next_to"])
+        At = URIRef(namesHouse["at"])
+        First = URIRef(namesHouse["1st"])
+        Second = URIRef(namesHouse["2nd"])
+        Middle = URIRef(namesHouse["middle"])
+        Fourth = URIRef(namesHouse["4th"])
+        Fifth = URIRef(namesHouse["5th"])
+        RedHouse = URIRef(namesHouse["redHouse"])
+        GreenHouse = URIRef(namesHouse["greenHouse"])
+        WhiteHouse = URIRef(namesHouse["whiteHouse"])
+        YellowHouse = URIRef(namesHouse["yellowHouse"])
+        BlueHouse = URIRef(namesHouse["blueHouse"])
+
+        British_House = URIRef(namesHouse["British_House"])
+        Spaniard_House = URIRef(namesHouse["Spaniard_House"])
+        Japanese_House = URIRef(namesHouse["Japanese_House"])
+        Italian_House = URIRef(namesHouse["Italian_House"])
+        Norwegian_House = URIRef(namesHouse["Norwegian_House"])
+
+        person_in_1stHouse_House = URIRef(namesHouse["person_in_1stHouse_House"])
+        person_in_2ndHouse_House = URIRef(namesHouse["person_in_2ndHouse_House"])
+        person_in_middleHouse_House = URIRef(namesHouse["person_in_middleHouse_House"])
+        person_in_4thHouse_House = URIRef(namesHouse["person_in_4thHouse_House"])
+        person_in_5thHouse_House = URIRef(namesHouse["person_in_5thHouse_House"])
+        who_drink_Milk_House = URIRef(namesHouse["who_drink_Milk_House"])
+        who_drink_Tea_House = URIRef(namesHouse["who_drink_Tea_House"])
+        who_drink_Orange_juice_House = URIRef(namesHouse["who_drink_Orange_juice_House"])
+        who_drink_Coffee_House = URIRef(namesHouse["who_drink_Coffee_House"])
+        who_drink_Water_House = URIRef(namesHouse["who_drink_Water_House"])
+        who_has_Dog_House = URIRef(namesHouse["who_has_Dog_House"])
+        who_has_Horse_House = URIRef(namesHouse["who_has_Horse_House"])
+        who_has_Snail_House = URIRef(namesHouse["who_has_Snail_House"])
+        who_has_Fox_House = URIRef(namesHouse["who_has_Fox_House"])
+        who_has_Zebra_House = URIRef(namesHouse["who_has_Zebra_House"])
+        whos_job_Photographer_House = URIRef(namesHouse["whos_job_Photographer_House"])
+        whos_job_Diplomat_House = URIRef(namesHouse["whos_job_Diplomat_House"])
+        whos_job_Violinist_House = URIRef(namesHouse["whos_job_Violinist_House"])
+        whos_job_Doctor_House = URIRef(namesHouse["whos_job_Doctor_House"])
+        whos_job_Painter_House = URIRef(namesHouse["whos_job_Painter_House"])
+### ===========================================
         Drink = URIRef(namesDrink["drink"])
         Milk = URIRef(namesDrink["milk"])
         Tea = URIRef(namesDrink["tea"])
@@ -75,25 +138,41 @@ class RDF(object):
 
 # Person:
         live_in = URIRef(namesPerson["live_in"])
-        has_pet = URIRef(namesPerson["has_pet"])
+        has_pet = URIRef(namesPerson["pet"])
         like_drink = URIRef(namesPerson["like_drink"])
-        has_job = URIRef(namesPerson["has_job"])
+        has_job = URIRef(namesPerson["job"])
 # House:
 
-        # is_enemy_of = URIRef(names["is_enemy_of"])
-        # like_eat = URIRef(names["like_eat"])
-        # is_relative_of = URIRef(names["is_relative_of"])
-
         # 将OWL数据添加到图
-        graph.add((Person, RDF.type, OWL.Class))  # 将Animals设置为一个类
-        graph.add((Person, RDFS.subClassOf, OWL.Thing))  # Animals为Thing的子类
-        graph.add((Person, RDFS.label, Literal("The person type")))  # 添加标签
-        graph.add((Person, RDFS.comment, Literal("The class of all person")))  # 添加描述
+        graph.add((Person, RDF.type, OWL.Class))
+        graph.add((Person, RDFS.subClassOf, OWL.Thing))
+        graph.add((Person, RDFS.label, Literal("The person type")))
+        graph.add((Person, RDFS.comment, Literal("The class of all person")))
         graph.add((British, isPerson, Person))
         graph.add((Spaniard, isPerson, Person))
         graph.add((Japanese, isPerson, Person))
         graph.add((Italian, isPerson, Person))
         graph.add((Norwegian, isPerson, Person))
+        graph.add((person_in_1stHouse, isPerson, Person))
+        graph.add((person_in_2ndHouse, isPerson, Person))
+        graph.add((person_in_middleHouse, isPerson, Person))
+        graph.add((person_in_4thHouse, isPerson, Person))
+        graph.add((person_in_5thHouse, isPerson, Person))
+        graph.add((who_drink_Milk, isPerson, Person))
+        graph.add((who_drink_Tea, isPerson, Person))
+        graph.add((who_drink_Orange_juice, isPerson, Person))
+        graph.add((who_drink_Coffee, isPerson, Person))
+        graph.add((who_drink_Water, isPerson, Person))
+        graph.add((who_has_Dog, isPerson, Person))
+        graph.add((who_has_Horse, isPerson, Person))
+        graph.add((who_has_Snail, isPerson, Person))
+        graph.add((who_has_Fox, isPerson, Person))
+        graph.add((who_has_Zebra, isPerson, Person))
+        graph.add((whos_job_Photographer, isPerson, Person))
+        graph.add((whos_job_Diplomat, isPerson, Person))
+        graph.add((whos_job_Violinist, isPerson, Person))
+        graph.add((whos_job_Doctor, isPerson, Person))
+        graph.add((whos_job_Painter, isPerson, Person))
 
         graph.add((Drink, RDF.type, OWL.Class))
         graph.add((Drink, RDFS.subClassOf, OWL.Thing))
@@ -109,11 +188,46 @@ class RDF(object):
         graph.add((House, RDFS.subClassOf, OWL.Thing))
         graph.add((House, RDFS.label, Literal("The House type")))
         graph.add((House, RDFS.comment, Literal("The class of all house")))
-        graph.add((Red, isHouse, House))
-        graph.add((green, isHouse, House))
-        graph.add((white, isHouse, House))
-        graph.add((yellow, isHouse, House))
-        graph.add((blue, isHouse, House))
+        graph.add((RedHouse, isHouse, House))
+        graph.add((GreenHouse, isHouse, House))
+        graph.add((WhiteHouse, isHouse, House))
+        graph.add((YellowHouse, isHouse, House))
+        graph.add((BlueHouse, isHouse, House))
+        graph.add((First, isHouse, House))
+        graph.add((Second, isHouse, House))
+        graph.add((Middle, isHouse, House))
+        graph.add((Fourth, isHouse, House))
+        graph.add((Fifth, isHouse, House))
+
+        graph.add((British_House, isHouse, House))
+        graph.add((Spaniard_House, isHouse, House))
+        graph.add((Japanese_House, isHouse, House))
+        graph.add((Italian_House, isHouse, House))
+        graph.add((Norwegian_House, isHouse, House))
+
+        graph.add((person_in_1stHouse_House, isHouse, House))
+        graph.add((person_in_2ndHouse_House, isHouse, House))
+        graph.add((person_in_middleHouse_House, isHouse, House))
+        graph.add((person_in_4thHouse_House, isHouse, House))
+        graph.add((person_in_5thHouse_House, isHouse, House))
+        graph.add((who_drink_Milk_House, isHouse, House))
+        graph.add((who_drink_Tea_House, isHouse, House))
+        graph.add((who_drink_Orange_juice_House, isHouse, House))
+        graph.add((who_drink_Coffee_House, isHouse, House))
+        graph.add((who_drink_Water_House, isHouse, House))
+        graph.add((who_has_Dog_House, isHouse, House))
+        graph.add((who_has_Horse_House, isHouse, House))
+        graph.add((who_has_Snail_House, isHouse, House))
+        graph.add((who_has_Fox_House, isHouse, House))
+        graph.add((who_has_Zebra_House, isHouse, House))
+        graph.add((whos_job_Photographer_House, isHouse, House))
+        graph.add((whos_job_Diplomat_House, isHouse, House))
+        graph.add((whos_job_Violinist_House, isHouse, House))
+        graph.add((whos_job_Doctor_House, isHouse, House))
+        graph.add((whos_job_Painter_House, isHouse, House))
+
+### ================================================
+### ================================================
 
         graph.add((Pet, RDF.type, OWL.Class))
         graph.add((Pet, RDFS.subClassOf, OWL.Thing))
@@ -134,7 +248,55 @@ class RDF(object):
         graph.add((Violinist, isJob, Job))
         graph.add((Doctor, isJob, Job))
         graph.add((Painter, isJob, Job))
+#---------------------------------------
+        # 英国人住在红色的房子里
+        graph.add((British, live_in, RedHouse))
+        # 西班牙人养了一条狗  
+        graph.add((Spaniard, has_pet, Dog))
+        # 日本人是一个油漆工
+        graph.add((Japanese, has_job, Painter))
+        # 意大利人喜欢喝茶      
+        graph.add((Italian, like_drink, Tea))
+        # 挪威人住在左边的第一个房子里      
+        graph.add((First, LeftsideOf, Second))
+        graph.add((Second, LeftsideOf, Middle))
+        graph.add((Middle, LeftsideOf, Fourth))
+        graph.add((Fourth, LeftsideOf, Fifth))
+        graph.add((First, Nextto, Second))
+        graph.add((Second, Nextto, Middle))
+        graph.add((Middle, Nextto, Fourth))
+        graph.add((Fourth, Nextto, Fifth))
 
+        graph.add((Second, RightsideOf, First))
+        graph.add((Middle, RightsideOf, Second))
+        graph.add((Fourth, RightsideOf, Middle))
+        graph.add((Fifth, RightsideOf, Fourth))
+        graph.add((Second, Nextto, First))
+        graph.add((Middle, Nextto, Second))
+        graph.add((Fourth, Nextto, Middle))
+        graph.add((Fifth, Nextto, Fourth))
+        
+        graph.add((Norwegian, live_in, First))
+        # 绿房子在白房子的右边    
+        graph.add((GreenHouse, RightsideOf, WhiteHouse))  
+        # 摄影师养了一只蜗牛        
+        graph.add((Photographer, has_pet, Snail))
+        # 外交官住在黄房子里        
+        graph.add((Diplomat, live_in, YellowHouse))
+        # 中间那个房子的人喜欢喝牛奶   
+        graph.add((person_in_middleHouse, like_drink, Milk))     
+        # 喜欢喝咖啡的人住在绿房子里        
+        graph.add((who_drink_Coffee, live_in, GreenHouse))
+        # 挪威人住在蓝色的房子旁边   
+        graph.add((Norwegian, liveNextto, BlueHouse))   
+        # 小提琴家喜欢喝橘子汁
+        graph.add((Violinist, like_drink, Orange_juice))
+        # 养狐狸的人所住的房子与医生的房子相邻
+        graph.add((who_has_Fox_House, liveNextto, whos_job_Doctor_House))
+        # 养马的人所住的房子与外交官的房子相邻
+        graph.add((who_has_Horse_House, liveNextto, whos_job_Diplomat_House))
+
+#---------------------------------------
         # 绑定命名空间
         graph.bind("owl", OWL)
         graph.bind("nmPerson", namesPerson)
@@ -143,11 +305,16 @@ class RDF(object):
         graph.bind("nmPet", namesPet)
         graph.bind("nmJob", namesJob)
 
-        graph.serialize("foaf.rdf", format="xml")  # 保存为RDF/XML格式，当然也可以保存为其他格式
+        graph.serialize("foaf.rdf", format="xml")
         graph.serialize("foaf.ttl", format="turtle")
-        # graph.serialize("foaf.xml", format="xml")
 
-        q = "SELECT ?a ?b WHERE {?a nmPerson:is ?b}"
+        # q = "SELECT ?a ?b WHERE {?a nmPerson:is ?b}"
+        q = """
+        SELECT ?a
+        WHERE {
+            ?a nmPerson:liveNextto nmHouse:whos_job_Doctor_House.
+        }
+        """
         print(list(graph.query(q)))
 
 
