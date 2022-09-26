@@ -2,291 +2,41 @@
 <rdf:RDF
    xmlns:nmPerson="http://xmlns.com/foaf/0.1/Person#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#italian">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:like_drink rdf:resource="http://xmlns.com/foaf/0.1/Person#tea"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#coffee">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#drink"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_1stHouseHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_Tea_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_have_zebra">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#pet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>The pet type</rdfs:label>
-    <rdfs:comment>The class of all pet</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#2ndHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:left_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#middleHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#middleHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#1stHouse"/>
-    <nmPerson:right_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#1stHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#norwegian">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:live_in rdf:resource="http://xmlns.com/foaf/0.1/Person#1stHouse"/>
-    <nmPerson:liveNextto rdf:resource="http://xmlns.com/foaf/0.1/Person#blueHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#spaniard">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:has_pet rdf:resource="http://xmlns.com/foaf/0.1/Person#dog"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_have_fox">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#middleHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:left_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#4thHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#4thHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#2ndHouse"/>
-    <nmPerson:right_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#2ndHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#4thHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:left_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#5thHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#5thHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#middleHouse"/>
-    <nmPerson:right_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#middleHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#1stHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:left_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#2ndHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#2ndHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#diplomat">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#job"/>
-    <nmPerson:live_in rdf:resource="http://xmlns.com/foaf/0.1/Person#yellowHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>The person type</rdfs:label>
-    <rdfs:comment>The class of all person</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_has_Fox_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#person_job_Doctor_House"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_4thHouseHouse_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#5thHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:right_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#4thHouse"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#4thHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#job">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>The job type</rdfs:label>
-    <rdfs:comment>The class of all job</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_has_Horse_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:next_to rdf:resource="http://xmlns.com/foaf/0.1/Person#person_job_Diplomat_House"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#greenHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-    <nmPerson:right_side_of rdf:resource="http://xmlns.com/foaf/0.1/Person#whiteHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#zebra">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#pet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_Violinist_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#japanese">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:has_job rdf:resource="http://xmlns.com/foaf/0.1/Person#painter"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_Water_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_water">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#yellowHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#british_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#tea">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#drink"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#violinist">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#job"/>
-    <nmPerson:like_drink rdf:resource="http://xmlns.com/foaf/0.1/Person#orange_juice"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_Doctor_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_have_horse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#house">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>The House type</rdfs:label>
-    <rdfs:comment>The class of all house</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_Orange_juice_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_coffee">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:live_in rdf:resource="http://xmlns.com/foaf/0.1/Person#greenHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#horse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#pet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_have_snail">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_5thHouseHouse_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_Painter_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#drink">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>The drink type</rdfs:label>
-    <rdfs:comment>The class of all drink type</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_tea">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_middleHouseHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:like_drink rdf:resource="http://xmlns.com/foaf/0.1/Person#milk"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#japanese_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_Diplomat_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#dog">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#pet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_has_Zebra_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_painter">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_1stHouseHouse_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_photographer">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#british">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-    <nmPerson:live_in rdf:resource="http://xmlns.com/foaf/0.1/Person#redHouse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_Photographer_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#italian_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#spaniard_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_5thHouseHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#redHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#whiteHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#water">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#drink"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#painter">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#job"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#doctor">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#job"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_doctor">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#photographer">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#job"/>
-    <nmPerson:has_pet rdf:resource="http://xmlns.com/foaf/0.1/Person#snail"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_has_Snail_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_have_dog">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_2ndHouseHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_2ndHouseHouse_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_diplomat">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_job_violinist">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#milk">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#drink"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_4thHouseHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#fox">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#pet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#blueHouse">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_Milk_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#snail">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#pet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#orange_juice">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#drink"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#norwegian_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_Coffee_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_has_Dog_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_orange_juice">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_drink_milk">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#person_in_middleHouseHouse_House">
-    <nmPerson:is rdf:resource="http://xmlns.com/foaf/0.1/Person#house"/>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#frank">
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#rebecca">
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#sean">
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+    <nmPerson:son_of rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jan">
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#alan">
+    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+    <nmPerson:daughter_of rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#joan">
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#abe">
+    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:son_of rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jane">
+    <nmPerson:daughter_of rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
   </rdf:Description>
 </rdf:RDF>

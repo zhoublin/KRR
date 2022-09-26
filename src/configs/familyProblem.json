@@ -1,0 +1,17 @@
+{
+    "Class":[
+        "person"
+    ],
+    "predicate":[
+        "mother",
+        "father",
+        "couple",
+        "sibling"
+    ],
+    "person":[
+        "james",
+        "david",
+        "ann",
+        "mike"
+    ]
+}

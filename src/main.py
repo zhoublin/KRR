@@ -2,6 +2,7 @@
 # @Time    : 
 # @Author  : 
 # @File    : 
+
 import os
 from knowledgedb import RDF
 from algorithm import FOILearner
@@ -9,26 +10,29 @@ from QAservice import QueryAnswerService
 from utils.parser import NLParser
 from utils.gui import QAGui
 
+from rdflib.extras.external_graph_libs import rdflib_to_networkx_multidigraph
+import matplotlib.pyplot as plt
+import networkx as nx
 
-# if __name__ == "__main__":
-#     config = omegaconf.OmegaConf.load("configs/config.yaml")
-#     parser = NLParser(config)
-#     database = RDF(config)
-#     serv = FOILearner(config)
-#     qaSystem = QueryAnswerService(database, serv, parser, config)
-#     gui = QAGui(qaSystem)
-#     gui.query()
+def Initialize(problem):
+    if problem == 'familyProblem':
+        RDF.buildKDB_Family()
+    elif problem == 'zebraProblem':
+        RDF.buildKDB()
+    elif problem == 'clanProblem':
+        RDF.buildKDB_clan()
+
+def visualization():
+    obj = RDF()
+    plt.figure(figsize=(50,60))
+    G = rdflib_to_networkx_multidigraph(obj.graph)
+    pos = nx.spring_layout(G)
+    nx.draw(G, with_labels=True, node_color='skyblue', edge_cmap=plt.cm.Blues, pos = pos)
+    plt.savefig('knowledgeGraph.jpg')
+    plt.show()
 
 if __name__ == "__main__":
-    # res = RDF.test()
-    RDF.buildKDB()
-    obj = RDF()
-    query = ["None", "live_in", "None"]
-    print(list(obj._query(query)))
-    insert = ["jane", "is_wife_of", "mike"]
-    obj._update(insert)
-
-    # obj._initialize()
-    obj._delete(["jane", "is_wife_of", "mike"])
-    query = ["jane", "None", "mike"]
-    print(obj._query(query))
+    Initialize('clanProblem')
+    visualization()
+    learner = FOILearner()
+    learner(['jane', 'daughter_of', '?a'])
