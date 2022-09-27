@@ -1,9 +1,8 @@
 # -*- Coding: utf-8 -*-
 # @Time    : 2022.9.25
-# @Author  : zhoublin
+# @Author  : zhoubolin
 # @File    : rdf.py
 
-from lib2to3.pgen2 import driver
 import os
 import json
 from telnetlib import SE
@@ -18,9 +17,7 @@ class RDF(object):
         with open(f"{os.getcwd()}/knowledgedb/nameSpace.json") as f:
             self.domain = json.load(f)
 
-    # def _initialize(self):
-    #     os.system(f"cp {os.getcwd()}/configs/nameSpace_bk.json {os.getcwd()}/knowledgedb/nameSpace.json")
-
+    # 删除知识
     def _delete(self, knowledge: list):
         assert knowledge.count(None) == 0
 
@@ -38,6 +35,7 @@ class RDF(object):
         self.graph.serialize(f"{os.getcwd()}/knowledgedb/initDB.rdf", format="xml")
         self.graph.serialize(f"{os.getcwd()}/knowledgedb/initDB.ttl", format="turtle")
 
+    # 增加知识
     def _update(self, knowledge: list):
         '''
         knowledge: [
@@ -66,12 +64,14 @@ class RDF(object):
         self.graph.serialize(f"{os.getcwd()}/knowledgedb/initDB.rdf", format="xml")
         self.graph.serialize(f"{os.getcwd()}/knowledgedb/initDB.ttl", format="turtle")
 
+    # 单谓词查询
     def _query(self, query: list):
         '''
-        query: [var1, predicate, var2]
+        query: ['none'/entity, predicate, 'none'/entity]
         '''
         query = list(map(lambda a: str.lower(a), query))
 
+        # 生成SPARQL查询语句
         variable = ['?'+chr(0x61+i) if query[i] == "none" else "nmPerson:"+query[i] for i in range(len(query))]
         var = [v for v in variable if v[0] == '?']
         _query = "SELECT {} WHERE {{{}.}}".format(
@@ -80,6 +80,7 @@ class RDF(object):
         # print('Query:', _query)
         result = list(self.graph.query(_query))
 
+        # 去除URIRef前缀
         extr_res = []
         for item in result:
             res = tuple([str(it).strip().split('#')[-1] for it in item])
@@ -87,32 +88,34 @@ class RDF(object):
                 extr_res.append(res)
         return extr_res
 
+    # 获取待推导谓词对应的正例集和负例集
     def _question(self, ques: str):
         '''
         ques: predicate to be deduced
         '''
         self.neg = []
         self.pos = self._query(['None', ques, 'None'])
-        for p in [pred for pred in self.domain["predicate"] if pred != ques and pred != "is"]:
+        for p in [pred for pred in self.domain["predicate"] if pred != ques]:
             self.neg += self._query(['None', p, 'None'])
         return self.pos, self.neg
 
+    # 多谓词查询
     def __call__(self, query: list[list]):
         '''
         query: [list, list, ...]
-        list: [var1, predicate, var2]
-        # note: Format of var should be ?chr
+        list: [var1/entity1, predicate, var2/entity2]
+        # note: 1. Format of var should be ?chr
         '''
         query = [list(map(lambda a: str.lower(a), q)) for q in query]
 
-        # variable = ['?'+chr(0x61+i) if query[i] == "none" else "nmPerson:"+query[i] for i in range(len(query))]
-        # var = [v for v in variable if v[0] == '?']
         var = []
         for que in query:
             for q in que:
                 if q[0]=='?' and q not in var:
                     var.append(q)
         variable = [" ".join(["nmPerson:"+q if q[0]!='?' else q for q in que]) for que in query]
+        
+        # 生成SPARQL查询语句
         _query = "SELECT {} WHERE {{{}.}}".format(
                             " ".join(var),
                             ". ".join(variable))
@@ -132,7 +135,6 @@ class RDF(object):
         from rdflib.namespace import OWL, RDF, RDFS
         graph = rdflib.Graph()
 
-        # 构造链接数据工具的命名空间
         namesPerson = Namespace("http://xmlns.com/foaf/0.1/Person#")
         # entity
         James = URIRef(namesPerson["james"])
