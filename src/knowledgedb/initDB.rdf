@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:nmPerson="http://xmlns.com/foaf/0.1/Person#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#abe">
+    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:son_of rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#frank">
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#sean">
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+    <nmPerson:son_of rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#rebecca">
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#alan">
+    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+    <nmPerson:daughter_of rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jan">
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#joan">
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jane">
+    <nmPerson:daughter_of rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+  </rdf:Description>
+</rdf:RDF>

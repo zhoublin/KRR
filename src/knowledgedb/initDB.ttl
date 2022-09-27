@@ -1,0 +1,30 @@
+@prefix nmPerson: <http://xmlns.com/foaf/0.1/Person#> .
+
+nmPerson:alan nmPerson:daughter_of nmPerson:frank ;
+    nmPerson:grandmother nmPerson:jane ;
+    nmPerson:husband nmPerson:joan ;
+    nmPerson:sibling nmPerson:abe .
+
+nmPerson:frank nmPerson:father nmPerson:abe,
+        nmPerson:alan ;
+    nmPerson:grandfather nmPerson:sean ;
+    nmPerson:husband nmPerson:rebecca .
+
+nmPerson:jan nmPerson:mother nmPerson:jane .
+
+nmPerson:joan nmPerson:father nmPerson:sean ;
+    nmPerson:grandfather nmPerson:jane .
+
+nmPerson:rebecca nmPerson:grandmother nmPerson:jan,
+        nmPerson:sean ;
+    nmPerson:mother nmPerson:abe ;
+    nmPerson:wife nmPerson:frank .
+
+nmPerson:abe nmPerson:sibling nmPerson:alan ;
+    nmPerson:son_of nmPerson:rebecca .
+
+nmPerson:sean nmPerson:father nmPerson:jane ;
+    nmPerson:son_of nmPerson:joan .
+
+nmPerson:jane nmPerson:daughter_of nmPerson:jan .
+
