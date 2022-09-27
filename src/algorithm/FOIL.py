@@ -157,7 +157,8 @@ class FOILearner(object):
 
         # 获取正例和负例集合
         pos, neg = self.database._question(predicate)
-        self.domain['predicate'].remove(predicate)
+        curt_domain = copy.deepcopy(self.domain)
+        curt_domain['predicate'].remove(predicate)
 
         # 生成待推导谓词
         Todeduce = ['?'+ClassforPred[predicate][0]+'_x', 
@@ -180,7 +181,7 @@ class FOILearner(object):
             print('QueryList:', QueryList)
             index = 0
             deduceMap = pd.DataFrame([], columns=['Predicate','Variable','Positive','Negative','InfoGain'], dtype=object)
-            for pred in self.domain['predicate']:
+            for pred in curt_domain['predicate']:
                 # print("\nPredicate:", pred)
                 for i in variables:
                     for order in [1, -1]:
@@ -189,6 +190,8 @@ class FOILearner(object):
                         prefix = list(variables - {i})[::order]
                         l_var, r_var = '?'+lClass+prefix[0], '?'+rClass+prefix[1]
                         
+                        if [l_var, pred, r_var] in QueryList:
+                            continue
                         # 在背景知识集中查询
                         cquery = [[l_var, pred, r_var]] + QueryList
                         qres = self.database(cquery)
@@ -208,7 +211,7 @@ class FOILearner(object):
                         deduceMap.loc[index] = [pred, [l_var, r_var], posNum, negNum, InfoGain]
                         index += 1
 
-            print(deduceMap)
+            print("\033[0;35m{}\033[0m".format(deduceMap))
             # 使用具有最大信息增益的谓词
             max_infoGain = deduceMap.loc[deduceMap["InfoGain"].idxmax()]
             queryTmp = max_infoGain.Variable
@@ -224,12 +227,18 @@ class FOILearner(object):
         print("\n===Deduce finished===")
         print('Question:', PRED)
         print(self._format(QueryList, Todeduce))
-        if PRED[0][0] != '?':
-            QueryList, _ = self._replaceAllvar(Todeduce[0], PRED[0], QueryList)
-        if PRED[2][0] != '?':
-            QueryList, _ = self._replaceAllvar(Todeduce[2], PRED[2], QueryList)
-        print(QueryList)
-        print(self.database(QueryList))
+        # if PRED[0][0] != '?':
+        #     QueryList, _ = self._replaceAllvar(Todeduce[0], PRED[0], QueryList)
+        # if PRED[2][0] != '?':
+        #     QueryList, _ = self._replaceAllvar(Todeduce[2], PRED[2], QueryList)
+        # print(QueryList)
+        result = []
+        for val in self.database(QueryList):
+            solution = {}
+            for i, var in enumerate(self._getAllvar(QueryList)):
+                solution[var] = val[i]
+            result.append(solution)
+        return result
 
     def __call__(self, question):
         if question[1][0] == '?':
@@ -239,4 +248,10 @@ class FOILearner(object):
         if question[1] not in self.domain['predicate']:
             print("[Error] Can not deduce (inexistent predicate)")
             return
-        self._deduce(question)
+
+        for res in self._deduce(question):
+            print("\033[0;34m{}\033[0m".format(res))
+        res = self.database._query([q if q[0]!='?' else 'none' for q in question])
+        if len(res) == 1:
+            print("Knowledge In database:")
+            print("\033[0;34m{}\033[0m".format(self.database._query([q if q[0]!='?' else 'none' for q in question])))

@@ -1,0 +1,4 @@
+tim father ?who
+joan husband ?who
+?who grandmother thomas
+?who grandchild alan

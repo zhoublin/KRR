@@ -8,10 +8,10 @@
         "husband",
         "wife",
         "sibling",
-        "son_of",
-        "daughter_of",
         "grandfather",
-        "grandmother"
+        "grandmother",
+        "child",
+        "grandchild"
     ],
     "person":[
         "frank",
@@ -21,6 +21,19 @@
         "joan",
         "sean",
         "jan",
-        "jane"
+        "jane",
+        "ian",
+        "ann",
+        "jill",
+        "george",
+        "jannet",
+        "bob",
+        "tim",
+        "tammy",
+        "tipsy",
+        "tom",
+        "thomas",
+        "debrah",
+        "billy"
     ]
 }

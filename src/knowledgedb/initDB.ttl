@@ -1,30 +1,98 @@
 @prefix nmPerson: <http://xmlns.com/foaf/0.1/Person#> .
 
-nmPerson:alan nmPerson:daughter_of nmPerson:frank ;
-    nmPerson:grandmother nmPerson:jane ;
-    nmPerson:husband nmPerson:joan ;
-    nmPerson:sibling nmPerson:abe .
+nmPerson:jannet nmPerson:grandmother nmPerson:jan,
+        nmPerson:tom ;
+    nmPerson:mother nmPerson:bob,
+        nmPerson:tim .
+
+nmPerson:debrah nmPerson:mother nmPerson:billy ;
+    nmPerson:wife nmPerson:thomas .
+
+nmPerson:ian nmPerson:father nmPerson:ann ;
+    nmPerson:husband nmPerson:jane .
+
+nmPerson:tammy nmPerson:grandmother nmPerson:thomas ;
+    nmPerson:mother nmPerson:tom ;
+    nmPerson:wife nmPerson:tim .
+
+nmPerson:tipsy nmPerson:grandmother nmPerson:billy ;
+    nmPerson:mother nmPerson:thomas ;
+    nmPerson:wife nmPerson:tom .
+
+nmPerson:abe nmPerson:child nmPerson:frank ;
+    nmPerson:sibling nmPerson:alan .
+
+nmPerson:billy nmPerson:child nmPerson:debrah ;
+    nmPerson:grandchild nmPerson:tom .
 
 nmPerson:frank nmPerson:father nmPerson:abe,
         nmPerson:alan ;
     nmPerson:grandfather nmPerson:sean ;
-    nmPerson:husband nmPerson:rebecca .
+    nmPerson:wife nmPerson:rebecca .
 
-nmPerson:jan nmPerson:mother nmPerson:jane .
+nmPerson:jill nmPerson:mother nmPerson:jan ;
+    nmPerson:wife nmPerson:bob .
 
-nmPerson:joan nmPerson:father nmPerson:sean ;
-    nmPerson:grandfather nmPerson:jane .
+nmPerson:joan nmPerson:grandmother nmPerson:jane ;
+    nmPerson:husband nmPerson:alan ;
+    nmPerson:mother nmPerson:sean .
 
-nmPerson:rebecca nmPerson:grandmother nmPerson:jan,
+nmPerson:rebecca nmPerson:grandmother nmPerson:sean ;
+    nmPerson:husband nmPerson:frank ;
+    nmPerson:mother nmPerson:abe .
+
+nmPerson:tim nmPerson:child nmPerson:george ;
+    nmPerson:father nmPerson:tom ;
+    nmPerson:grandfather nmPerson:thomas ;
+    nmPerson:husband nmPerson:tammy .
+
+nmPerson:alan nmPerson:child nmPerson:rebecca ;
+    nmPerson:father nmPerson:sean ;
+    nmPerson:grandfather nmPerson:jane ;
+    nmPerson:sibling nmPerson:abe ;
+    nmPerson:wife nmPerson:joan .
+
+nmPerson:ann nmPerson:child nmPerson:ian ;
+    nmPerson:grandchild nmPerson:jan .
+
+nmPerson:bob nmPerson:child nmPerson:george ;
+    nmPerson:father nmPerson:jan ;
+    nmPerson:grandfather nmPerson:jane ;
+    nmPerson:husband nmPerson:jill .
+
+nmPerson:george nmPerson:father nmPerson:bob ;
+    nmPerson:grandfather nmPerson:jan,
+        nmPerson:tom ;
+    nmPerson:husband nmPerson:jannet .
+
+nmPerson:thomas nmPerson:child nmPerson:tipsy ;
+    nmPerson:father nmPerson:billy ;
+    nmPerson:grandchild nmPerson:tim ;
+    nmPerson:husband nmPerson:debrah .
+
+nmPerson:jan nmPerson:child nmPerson:jill ;
+    nmPerson:grandchild nmPerson:george ;
+    nmPerson:grandmother nmPerson:ann ;
+    nmPerson:mother nmPerson:jane ;
+    nmPerson:wife nmPerson:sean .
+
+nmPerson:jane nmPerson:child nmPerson:jan,
         nmPerson:sean ;
-    nmPerson:mother nmPerson:abe ;
-    nmPerson:wife nmPerson:frank .
+    nmPerson:grandchild nmPerson:alan,
+        nmPerson:bob,
+        nmPerson:jill,
+        nmPerson:joan ;
+    nmPerson:mother nmPerson:ann ;
+    nmPerson:wife nmPerson:ian .
 
-nmPerson:abe nmPerson:sibling nmPerson:alan ;
-    nmPerson:son_of nmPerson:rebecca .
+nmPerson:sean nmPerson:child nmPerson:joan ;
+    nmPerson:father nmPerson:jane ;
+    nmPerson:grandchild nmPerson:frank,
+        nmPerson:rebecca ;
+    nmPerson:grandfather nmPerson:ann .
 
-nmPerson:sean nmPerson:father nmPerson:jane ;
-    nmPerson:son_of nmPerson:joan .
-
-nmPerson:jane nmPerson:daughter_of nmPerson:jan .
+nmPerson:tom nmPerson:child nmPerson:tammy ;
+    nmPerson:father nmPerson:thomas ;
+    nmPerson:grandchild nmPerson:george ;
+    nmPerson:husband nmPerson:tipsy .
 
