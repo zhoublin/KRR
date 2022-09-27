@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     learner = FOILearner()
     if args.debug:
-        learner(['?who', 'father', 'ann'])
+        learner(['?who', 'grandfather', 'sean'])
     else:
         print("\033[0;31mEnter a query consisting of a predicate and variables, with the \
             \nvariable beginning with '?' and ensure that all letters are lowercase. \
@@ -52,6 +52,7 @@ if __name__ == "__main__":
         query = input('>>> ')
         while query != 'exit':
             terms = query.split(' ')
+            print(terms)
             # learner(['jane', 'daughter_of', '?a'])
             learner([terms[0], terms[1], terms[2]])
             query = input('>>> ')

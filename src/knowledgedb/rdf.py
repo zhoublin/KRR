@@ -3,6 +3,7 @@
 # @Author  : zhoubolin
 # @File    : rdf.py
 
+from lib2to3.pgen2.token import GREATER
 import os
 import json
 from telnetlib import SE
@@ -179,47 +180,148 @@ class RDF(object):
         Sean = URIRef(namesPerson["sean"])
         Jan = URIRef(namesPerson["jan"])
         Jane = URIRef(namesPerson["jane"])
+        Ian = URIRef(namesPerson["ian"])
+        Ann = URIRef(namesPerson["ann"])
+        Jill = URIRef(namesPerson["jill"])
+        George = URIRef(namesPerson["george"])
+        Jannet = URIRef(namesPerson["jannet"])
+        Bob = URIRef(namesPerson["bob"])
+        Tim = URIRef(namesPerson["tim"])
+        Tammy = URIRef(namesPerson["tammy"])
+        Tipsy = URIRef(namesPerson["tipsy"])
+        Tom = URIRef(namesPerson["tom"])
+        Thomas = URIRef(namesPerson["thomas"])
+        Debrah = URIRef(namesPerson["debrah"])
+        Billy = URIRef(namesPerson["billy"])
 
         # predicates
         Mother = URIRef(namesPerson["mother"])
         Father = URIRef(namesPerson["father"])
-        Husband = URIRef(namesPerson["husband"])
-        Wife = URIRef(namesPerson["wife"])
+        Husband = URIRef(namesPerson["husband"])        # <-
+        Wife = URIRef(namesPerson["wife"])              # <-
         Sibling = URIRef(namesPerson["sibling"])
 
-        Son_of = URIRef(namesPerson["son_of"])
-        Daughter_of = URIRef(namesPerson["daughter_of"])
         Grandfather = URIRef(namesPerson["grandfather"])
-        # Grandson = URIRef(namesPerson["grandson"])
         Grandmother = URIRef(namesPerson["grandmother"])
-        # Granddaughter = URIRef(namesPerson["granddaughter"])
+        Child = URIRef(namesPerson["child"])            # <-
+        Grandchild = URIRef(namesPerson["grandchild"])  # <-
 
-        graph.add((Frank, Husband, Rebecca))
-        graph.add((Frank, Father, Alan))
-        graph.add((Frank, Father, Abe))
-        graph.add((Rebecca, Wife, Frank))
-        graph.add((Rebecca, Mother, Abe))
-        graph.add((Abe, Sibling, Alan))
-        graph.add((Alan, Sibling, Abe))
-        graph.add((Alan, Husband, Joan))
-        # graph.add((Joan, Wife, Alan))
-        graph.add((Joan, Father, Sean))
-        graph.add((Sean, Father, Jane))
-        graph.add((Jan, Mother, Jane))
+        graph.add((Frank, Father, Alan))       
+        graph.add((Frank, Father, Abe))         
+        graph.add((Frank, Wife, Rebecca))       
+        graph.add((Frank, Grandfather, Sean))  
 
-        graph.add((Alan, Daughter_of, Frank))
-        # graph.add((Alan, Daughter_of, Rebecca))
-        graph.add((Abe, Son_of, Rebecca))
-        graph.add((Sean, Son_of, Joan))
-        graph.add((Jane, Daughter_of, Jan))
-
-        graph.add((Frank, Grandfather, Sean))
-
+        graph.add((Rebecca, Husband, Frank)) 
+        graph.add((Rebecca, Mother, Abe))      
+        # graph.add((Rebecca, Mother, Alan))      
         graph.add((Rebecca, Grandmother, Sean))
-        graph.add((Rebecca, Grandmother, Jan))
 
-        graph.add((Alan, Grandmother, Jane))
-        graph.add((Joan, Grandfather, Jane))
+        graph.add((Abe, Sibling, Alan))
+        # graph.add((Abe, Child, Rebecca))
+        graph.add((Abe, Child, Frank))
+
+        # graph.add((Alan, Child, Frank))
+        graph.add((Alan, Child, Rebecca))
+        graph.add((Alan, Sibling, Abe))
+        graph.add((Alan, Wife, Joan))       
+        graph.add((Alan, Father, Sean))
+        graph.add((Alan, Grandfather, Jane))
+
+        graph.add((Joan, Husband, Alan))   
+        graph.add((Joan, Mother, Sean))
+        graph.add((Joan, Grandmother, Jane))
+
+        graph.add((Sean, Grandchild, Frank))
+        graph.add((Sean, Grandchild, Rebecca))
+        # graph.add((Sean, Child, Alan))
+        graph.add((Sean, Child, Joan))
+        # graph.add((Sean, Husband, Jan))  
+        graph.add((Sean, Father, Jane))
+        graph.add((Sean, Grandfather, Ann))
+
+        graph.add((Jan, Grandchild, George))
+        # graph.add((Jan, Grandchild, Jannet))
+        graph.add((Jan, Child, Jill))
+        # graph.add((Jan, Child, Bob))
+        graph.add((Jan, Wife, Sean))
+        graph.add((Jan, Mother, Jane))
+        graph.add((Jan, Grandmother, Ann))
+
+        graph.add((Jane, Child, Jan))
+        graph.add((Jane, Child, Sean))
+        graph.add((Jane, Wife, Ian))   
+        graph.add((Jane, Grandchild, Alan))
+        graph.add((Jane, Grandchild, Joan))
+        graph.add((Jane, Grandchild, Jill))
+        graph.add((Jane, Grandchild, Bob))
+        graph.add((Jane, Mother, Ann))
+
+        graph.add((Ian, Husband, Jane))
+        graph.add((Ian, Father, Ann))
+
+        # graph.add((Ann, Child, Jane))
+        graph.add((Ann, Child, Ian))
+        # graph.add((Ann, Grandchild, Sean))
+        graph.add((Ann, Grandchild, Jan))
+
+        graph.add((George, Husband, Jannet))
+        graph.add((George, Father, Bob))
+        # graph.add((George, Father, Tim))
+        graph.add((George, Grandfather, Jan))
+        graph.add((George, Grandfather, Tom))
+
+        # graph.add((Jannet, Wife, George))
+        graph.add((Jannet, Mother, Bob))
+        graph.add((Jannet, Mother, Tim))
+        graph.add((Jannet, Grandmother, Jan))
+        graph.add((Jannet, Grandmother, Tom))
+
+        graph.add((Bob, Child, George))
+        # graph.add((Bob, Child, Jannet))
+        graph.add((Bob, Husband, Jill))
+        graph.add((Bob, Father, Jan))
+        graph.add((Bob, Grandfather, Jane))
+
+        graph.add((Jill, Wife, Bob))
+        graph.add((Jill, Mother, Jan))
+        # graph.add((Jill, Grandmother, Jane))
+
+        graph.add((Tim, Child, George))
+        # graph.add((Tim, Child, Jannet))
+        graph.add((Tim, Husband, Tammy))
+        graph.add((Tim, Father, Tom))
+        graph.add((Tim, Grandfather, Thomas))
+
+        graph.add((Tammy, Wife, Tim))
+        graph.add((Tammy, Mother, Tom))
+        graph.add((Tammy, Grandmother, Thomas))
+
+        graph.add((Tom, Grandchild, George))
+        # graph.add((Tom, Grandchild, Jannet))
+        # graph.add((Tom, Child, Tim))
+        graph.add((Tom, Child, Tammy))
+        graph.add((Tom, Husband, Tipsy))
+        graph.add((Tom, Father, Thomas))
+        # graph.add((Tom, Grandfather, Billy))
+
+        graph.add((Tipsy, Wife, Tom))
+        graph.add((Tipsy, Mother, Thomas))
+        graph.add((Tipsy, Grandmother, Billy))
+
+        graph.add((Thomas, Grandchild, Tim))
+        # graph.add((Thomas, Grandchild, Tammy))
+        graph.add((Thomas, Child, Tipsy))
+        # graph.add((Thomas, Child, Tom))
+        graph.add((Thomas, Husband, Debrah))
+        graph.add((Thomas, Father, Billy))
+
+        graph.add((Debrah, Wife, Thomas))
+        graph.add((Debrah, Mother, Billy))
+
+        # graph.add((Billy, Grandchild, Tipsy))
+        graph.add((Billy, Grandchild, Tom))
+        # graph.add((Billy, Child, Thomas))
+        graph.add((Billy, Child, Debrah))
 
         graph.bind("nmPerson", namesPerson)
 

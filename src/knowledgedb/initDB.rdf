@@ -3,40 +3,121 @@
    xmlns:nmPerson="http://xmlns.com/foaf/0.1/Person#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#abe">
-    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
-    <nmPerson:son_of rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jannet">
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#bob"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#tim"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#tom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#thomas">
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#tim"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#tipsy"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#debrah"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#billy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#tammy">
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#tim"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#tom"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#thomas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#bob">
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#george"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#jill"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#frank">
-    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
     <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
     <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
     <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#sean">
-    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
-    <nmPerson:son_of rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jane">
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#ian"/>
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#jill"/>
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#bob"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#ann"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#rebecca">
-    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
     <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
     <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
-    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#alan">
-    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
-    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
-    <nmPerson:daughter_of rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
-    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#tipsy">
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#tom"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#thomas"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#billy"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jan">
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#george"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#jill"/>
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
     <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#ann"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#sean">
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#ann"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#joan">
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
+    <nmPerson:grandmother rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#billy">
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#tom"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#debrah"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#tim">
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#george"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#tammy"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#tom"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#thomas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#george">
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#jannet"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#bob"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+    <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#tom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#tom">
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#george"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#tammy"/>
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#tipsy"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#thomas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#ann">
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#ian"/>
+    <nmPerson:grandchild rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#alan">
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#rebecca"/>
+    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#abe"/>
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#joan"/>
     <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#sean"/>
     <nmPerson:grandfather rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jane">
-    <nmPerson:daughter_of rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#jill">
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#bob"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#jan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#abe">
+    <nmPerson:sibling rdf:resource="http://xmlns.com/foaf/0.1/Person#alan"/>
+    <nmPerson:child rdf:resource="http://xmlns.com/foaf/0.1/Person#frank"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#ian">
+    <nmPerson:husband rdf:resource="http://xmlns.com/foaf/0.1/Person#jane"/>
+    <nmPerson:father rdf:resource="http://xmlns.com/foaf/0.1/Person#ann"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person#debrah">
+    <nmPerson:wife rdf:resource="http://xmlns.com/foaf/0.1/Person#thomas"/>
+    <nmPerson:mother rdf:resource="http://xmlns.com/foaf/0.1/Person#billy"/>
   </rdf:Description>
 </rdf:RDF>
