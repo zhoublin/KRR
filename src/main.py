@@ -6,9 +6,6 @@
 import os
 from knowledgedb import RDF
 from algorithm import FOILearner
-from QAservice import QueryAnswerService
-from utils.parser import NLParser
-from utils.gui import QAGui
 
 from rdflib.extras.external_graph_libs import rdflib_to_networkx_multidigraph
 import matplotlib.pyplot as plt
