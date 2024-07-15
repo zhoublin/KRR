@@ -13,3 +13,5 @@
 在 `src` 文件夹下执行main.py，通过参数 `--kngraph` 指定知识图谱，如：
 
     python main.py --kngraph clanProblem
+
+
